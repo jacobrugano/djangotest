@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="{{('static/media/style.css')}}">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>
+    </title>
+</head>
+<body>
+
+
+
+    <div class="collapse navbar-collapse" id="navnav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home.html">BBC<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#home.html">CNN</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <section>
+        <div>
+            <div class = "cnn"> CNN  </div>
+
+            {% for cnews,cdesc,cimg,cp_date,curl in cnn_contents %}
+            <div class="wrapper" id="cnn" style="height: 400px; width: 100%; display: flex;
+            align-items: center;  padding: 10px; justify-content: space-between; background-color: rg 47, 47;">
+                <div class="item" style="height: 300px; min-width: 30%;  border-radius: 20px;
+                margin: 10px; box-shadow: 10px 10px 10px rgba(37, 1, 1, 0.4); padding: 0.5px;
+                flex-flow: column wrap; border-bottom: 1px rgb(8, 8, 8);"><a href="{{curl}}"><img src="{{cimg}}" style="height: 100%;width: 100%;"></a></div>
+                <div class = "c-box">
+                <div class="content"><a href="{{curl}}"><h2 style="color: rgb(43, 5, 3); font-size: 20px;font-weight: bold;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{title}}</h2></a></div>
+                <div class="content"><a href="{{curl}}"><p style="color: rgb(0, 0, 0);font-size: 15px;font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{cdesc}}</p></a></div>
+                <div class="content"><p style="color: rgb(0, 0, 0);font-size: 15px;font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Published on Date:- </p><p>{{cp_date}}</p></div>
+                </div>
+                </div> 
+            {% endfor %}  
+        </div>
+    
+    </section>
+
+</body>
+</html>

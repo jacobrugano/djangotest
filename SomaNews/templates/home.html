@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="{{('static/media/style.css')}}">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>
+    </title>
+</head>
+<body>
+    <!-- <div style="height: 10px; width: 100%; background-color: red;
+    border-top: 1px solid black !important; position: right; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    display: flex; justify-content: space-around; align-items: center; flex-flow: row wrap;">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+            <li><a href="#bbc1">BBC</a></li>
+            <li><a href="#bbc2">CNN</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div> -->
+        <div class="collapse navbar-collapse" id="navnav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#home.htm">BBC<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cnn">CNN</a>
+            </li>
+        </ul>
+    </div>
+
+    <section>
+        <div>
+            <div class = "head2"><strong> TODAY'S TOP HEADLINES</strong></div>
+            {% for title,desc,img,p_date,url in all %}
+            <div class="wrapper" id="bbc2" style="height: 400px; width: 100%; display: flex;
+            align-items: center;  padding: 10px; justify-content: space-between; background-color: rg 47, 47;">
+                <div class="item" style="height: 300px; min-width: 30%;  border-radius: 20px;
+                margin: 10px; box-shadow: 10px 10px 10px rgba(37, 1, 1, 0.4); padding: 0.5px;
+                flex-flow: column wrap; border-bottom: 1px rgb(8, 8, 8);"><a href="{{url}}"><img src="{{img}}" style="height: 100%;width: 100%;"></a></div>
+                <div class = "c-box">
+                <div class="content"><a href="{{url}}"><h2 style="color: rgb(43, 5, 3); font-size: 20px;font-weight: bold;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{title}}</h2></a></div>
+                <div class="content"><p style="color: rgb(0, 0, 0);font-size: 15px;font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{desc}}</p></div>
+                <div class="content"><p style="color:rgb(18, 19, 17);">Publish Date:- </p><p style="color: rgb(8, 8, 8);font-size: 15px;font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> {{p_date}} </p></div>
+                </div>
+                </div> 
+            {% endfor %}
+        </div>
+    
+    </section>
+   
+<footer>
+</footer>
+</body>
+</html>
