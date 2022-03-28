@@ -12,31 +12,31 @@ def home():
     newsapi = NewsApiClient(api_key="44216e90102b4e7bbc548343f8cdc3ea")
 
 #Code-block for getting the top stories from the API
-    top_headlines = newsapi.get_top_headlines(sources = "bbc-news") #source to help us from where to get the news by API.
+    topheadlines = newsapi.get_top_headlines(sources = "bbc-news") #source to help us from where to get the news by API.
 
 #code-block to fetch headlines
-    t_articles = top_headlines['articles']
+    top_articles = topheadlines['articles']
 
 
 #We make a list of the items to display on our application
     news = []
-    desc = []
-    img = []
-    p_date = []
-    url = []
+    descriptions = []
+    image = []
+    publication_date = []
+    news_url = []
 
 #Code block using a for-loop to fetch the contents of articles.
-    for i in range(len(t_articles)): 
-        main_article = t_articles[i]
+    for i in range(len(top_articles)): 
+        main_article = top_articles[i]
 
         news.append(main_article['title'])  #To append the title into the list.
-        desc.append(main_article['description'])  #To append the description into the list.
-        img.append(main_article['urlToImage'])  #Append the urlToImage into the list.
-        p_date.append(main_article['publishedAt'])  #Append the published date into the list.
-        url.append(main_article['url'])  #Append the url into the list.
+        descriptions.append(main_article['description'])  #To append the description into the list.
+        image.append(main_article['urlToImage'])  #Append the urlToImage into the list.
+        publication_date.append(main_article['publishedAt'])  #Append the published date into the list.
+        news_url.append(main_article['url'])  #Append the url into the list.
 
 #To store the contents gotten above.
-        contents = zip(news, desc,img,p_date,url)
+        contents = zip(news, descriptions,image,publication_date,news_url)
 
 #To get all articles:
     all_articles = newsapi.get_everything(sources = "bbc-news")
